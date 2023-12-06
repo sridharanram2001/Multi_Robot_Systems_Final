@@ -1,0 +1,40 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 1000
+    use_sim_time: true
+
+    diff_cont:
+      type: diff_drive_controller/DiffDriveController
+
+    arm_controller:
+      type: position_controllers/JointGroupPositionController
+
+    joint_broad:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+diff_cont:
+  ros__parameters:
+    publish_rate: 50.0
+    base_frame_id: base_link
+
+    left_wheel_names: ['W_L_joint']
+    right_wheel_names: ['W_R_joint']
+
+    wheel_separation: 0.4
+    wheel_radius: 0.15
+    wheels_per_side: 1
+    use_stamped_vel: false
+
+arm_controller:
+  ros__parameters:
+    command_interfaces:
+      - position
+
+    state_interfaces:
+      - position
+      - velocity
+
+    joints: 
+      - Pris_R_joint
+      - Rev1_R_joint
+      - Rev2_R_joint

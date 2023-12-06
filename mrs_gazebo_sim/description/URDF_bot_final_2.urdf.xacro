@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="URDF_bot_final_2">
+  
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="8.60422844084496E-16 -0.00697001255399204 -0.113640401660277"
+        rpy="0 0 0" />
+      <mass
+        value="26.8879845162854" />
+      <inertia
+        ixx="0.385139507707689"
+        ixy="-3.51992200976601E-16"
+        ixz="-9.6673037334202E-16"
+        iyy="0.376289539605871"
+        iyz="0.000682246181241517"
+        izz="0.521493886642275" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mrs_gazebo_sim/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mrs_gazebo_sim/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+   <gazebo reference="base_link">
+    <material>Gazebo/Red</material>
+    <mu1 value="0.005"/>
+    <mu2 value="0.005"/>
+    <material>Gazebo/Red</material>
+    <mu1 value="0.05"/>
+    </gazebo>
+  <link name="W_L">  
+    <inertial>
+      <origin
+        xyz="-1.11022302462516E-15 0.0202816466241088 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.56046012382194" />
+      <inertia
+        ixx="0.000964865107374987"
+        ixy="2.80987895356466E-18"
+        ixz="-1.1664625765267E-19"
+        iyy="0.00178033491000625"
+        iyz="5.96074138738194E-19"
+        izz="0.000964925835650445" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mrs_gazebo_sim/meshes/W_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mrs_gazebo_sim/meshes/W_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="W_L_joint"
+    type="continuous">
+    <origin
+      xyz="-0.239999999999999 0 -0.205000000000002"
+      rpy="-3.14159265358979 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="W_L" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <gazebo reference="W_L">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <link
+    name="W_R">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 -0.0202816466241043 -4.16333634234434E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.56046012382194" />
+      <inertia
+        ixx="0.000964865107374987"
+        ixy="-3.09970833166368E-18"
+        ixz="7.88018780428268E-20"
+        iyy="0.00178033491000625"
+        iyz="-1.25295594502704E-17"
+        izz="0.000964925835650445" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mrs_gazebo_sim/meshes/W_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mrs_gazebo_sim/meshes/W_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="W_R_joint"
+    type="continuous">
+    <origin
+      xyz="0.240000000000001 0 -0.204999999999999"
+      rpy="-3.14159265358979 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="W_R" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <gazebo reference="W_R">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <link
+    name="Pris_R_link">
+    <inertial>
+      <origin
+        xyz="0.0074999999999997 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0461780972450962" />
+      <inertia
+        ixx="5.12918276753618E-05"
+        ixy="-1.24143784260085E-19"
+        ixz="1.05369012081565E-20"
+        iyy="4.60163160465626E-06"
+        iyz="-4.44692297308508E-20"
+        izz="4.84218747173967E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mrs_gazebo_sim/meshes/P1_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mrs_gazebo_sim/meshes/P1_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Pris_R_joint"
+    type="prismatic">
+    <origin
+      xyz="0.154649736298411 0.148648533555594 -0.182094440280863"
+      rpy="0.870370202775625 1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Pris_R_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0.15"
+      effort="0.1"
+      velocity="0.01" />
+  </joint>
+  <link
+    name="Rev1_R_link">
+    <inertial>
+      <origin
+        xyz="0.00750000000000009 0.05 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0461780972450962" />
+      <inertia
+        ixx="5.12918276753618E-05"
+        ixy="1.7461282703913E-19"
+        ixz="2.56580136426819E-21"
+        iyy="4.60163160465626E-06"
+        iyz="-1.0068607852118E-19"
+        izz="4.84218747173967E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mrs_gazebo_sim/meshes/R1_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mrs_gazebo_sim/meshes/R1_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rev1_R_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.0500000000000001 0"
+      rpy="-2.26886705484522 0 3.14159265358979" />
+    <parent
+      link="Pris_R_link" />
+    <child
+      link="Rev1_R_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="0.78"
+      effort="0.1"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="Rev2_R_link">
+    <inertial>
+      <origin
+        xyz="0.0231462742976176 -0.0659326410357274 0.000249370283456174"
+        rpy="0 0 0" />
+      <mass
+        value="0.0668390486225481" />
+      <inertia
+        ixx="0.000100971656034691"
+        ixy="1.60498639595143E-06"
+        ixz="-2.3109653704175E-08"
+        iyy="2.07628535797184E-05"
+        iyz="6.19297276668896E-07"
+        izz="9.08923415643615E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mrs_gazebo_sim/meshes/R2_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mrs_gazebo_sim/meshes/R2_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rev2_R_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.1 0"
+      rpy="-3.13374920384741 0 0" />
+    <parent
+      link="Rev1_R_link" />
+    <child
+      link="Rev2_R_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.52"
+      upper="3.14"
+      effort="0.1"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="Pris_L_link">
+    <inertial>
+      <origin
+        xyz="0.00749999999999984 5.55111512312578E-17 2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0461780972450962" />
+      <inertia
+        ixx="5.12918276753618E-05"
+        ixy="9.29088277330331E-20"
+        ixz="8.06265920000474E-21"
+        iyy="4.60163160465626E-06"
+        iyz="1.56701095242046E-20"
+        izz="4.84218747173967E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mrs_gazebo_sim/meshes/P2_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mrs_gazebo_sim/meshes/P2_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Pris_L_joint"
+    type="prismatic">
+    <origin
+      xyz="-0.153814757931836 0.149613727495049 -0.181781659152969"
+      rpy="2.29674794123281 1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Pris_L_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0.15"
+      effort="0.1"
+      velocity="0.01" />
+  </joint>
+  <link
+    name="Rev1_L_link">
+    <inertial>
+      <origin
+        xyz="0.00749999999999995 0.05 3.46944695195361E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.0461780972450962" />
+      <inertia
+        ixx="5.12918276753618E-05"
+        ixy="1.78121309247091E-19"
+        ixz="-1.80996776417054E-22"
+        iyy="4.60163160465626E-06"
+        iyz="1.6675961149069E-21"
+        izz="4.84218747173967E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mrs_gazebo_sim/meshes/R1_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mrs_gazebo_sim/meshes/R1_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rev1_L_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.0499999999999992 0"
+      rpy="-0.801705358052037 0 3.14159265358979" />
+    <parent
+      link="Pris_L_link" />
+    <child
+      link="Rev1_L_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.78"
+      upper="1.57"
+      effort="0.1"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="Rev2_L_link">
+    <inertial>
+      <origin
+        xyz="-0.0218537257023807 -0.0659326410357276 0.000249370283452909"
+        rpy="0 0 0" />
+      <mass
+        value="0.0668390486225481" />
+      <inertia
+        ixx="0.000100971656034691"
+        ixy="1.60498639595202E-06"
+        ixz="-2.31096537041645E-08"
+        iyy="2.07628535797184E-05"
+        iyz="6.19297276668749E-07"
+        izz="9.08923415643614E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mrs_gazebo_sim/meshes/R2_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mrs_gazebo_sim/meshes/R2_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rev2_L_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.1 0"
+      rpy="0.00784344973856893 0 -3.14159265358979" />
+    <parent
+      link="Rev1_L_link" />
+    <child
+      link="Rev2_L_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.52"
+      upper="3.14"
+      effort="0.1"
+      velocity="0.1" />
+  </joint>
+
+  
+  <gazebo>
+ <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
+
+  <right_joint>W_R_joint</right_joint>
+  <left_joint>W_L_joint</left_joint> 
+  <wheel_separation>0.4</wheel_separation>
+  <wheel_diameter>0.15</wheel_diameter> 
+
+
+  <max_wheel_torque>200</max_wheel_torque>
+  <max_wheel_acceleration>10.0</max_wheel_acceleration>
+
+  <odometry_frame>odom</odometry_frame>
+  <robot_base_frame>base_link</robot_base_frame>
+
+  <publish_odom>true</publish_odom>
+  <publish_odom_tf>true</publish_odom_tf>
+  <publish_wheel_tf>true</publish_wheel_tf>
+
+ </plugin>
+
+</gazebo>
+
+<!-- <xacro:include filename="ros2_gazebo_control.xacro"/> -->
+
+</robot>
