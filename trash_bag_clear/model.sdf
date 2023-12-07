@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="clear_trash_bag">
+    <static>true</static>
+    <link name="link">
+      <collision name="surface">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+          <uri>model://trash_bag_clear/meshes/trash.dae</uri>
+          <scale>0.5 0.5 0.5</scale>
+          </mesh>
+        </geometry>
+      </collision>
+
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://trash_bag_clear/meshes/trash.dae</uri>
+            <scale>0.5 0.5 0.5</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
